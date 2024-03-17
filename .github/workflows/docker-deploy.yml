@@ -21,7 +21,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: /Users/singhthatcodes/CodeOps/misc/flutter_web_app1
-          file: /Users/singhthatcodes/CodeOps/misc/flutter_web_app1/Dockerfile
+          context: .
+          file: Dockerfile
           push: true
           tags: japjeetsingh/flutter_web_app1:latest
