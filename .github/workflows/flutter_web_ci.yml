@@ -13,14 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3 # Updated to the latest version
+      - uses: actions/checkout@v3
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v1 # Monitor for new versions supporting Node.js 20
-        with:
-          flutter-version: "3.x"
+      - name: Clone Flutter repository at specified version
+        run: git clone https://github.com/flutter/flutter.git -b 3.20.0-14.0.pre --depth 1 ${{ github.workspace }}/flutter
 
-      - name: Install dependencies
+      - name: Add Flutter to PATH
+        run: echo "${{ github.workspace }}/flutter/bin" >> $GITHUB_PATH
+
+      - name: Install Flutter dependencies
+        run: flutter doctor
+
+      - name: Install app dependencies
         run: flutter pub get --verbose
 
       - name: Upgrade dependencies
