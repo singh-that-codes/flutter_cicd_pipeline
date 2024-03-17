@@ -13,25 +13,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Flutter
-      uses: subosito/flutter-action@v1
-      with:
-        flutter-version: '3.x' # Specify the Flutter version you are using
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: "3.x"
 
-    - name: Install dependencies
-      run: flutter pub get
+      - name: Install dependencies
+        run: flutter pub get
 
-    - name: Run tests
-      run: flutter test
+      - name: Upgrade dependencies
+        run: flutter pub upgrade
 
-    - name: Build web app
-      run: flutter build web
+      - name: Run tests
+        run: flutter test
 
-    - name: Archive web app
-      uses: actions/upload-artifact@v2
-      with:
-        name: web-app
-        path: build/web/
+      - name: Build web app
+        run: flutter build web --verbose
 
+      - name: Archive web app
+        uses: actions/upload-artifact@v2
+        with:
+          name: web-app
+          path: build/web/
