@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter CICD PIPELINE'),
     );
   }
 }
@@ -108,6 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
+            Text(
+                'This is a sample flutter web app demonstrating CICD using github actions',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
