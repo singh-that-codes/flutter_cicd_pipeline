@@ -75,6 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
             AnimatedTextKit(
               animatedTexts: [
                 TyperAnimatedText(
+                  "DEMO For PERESSNTATION",
+                  textStyle: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                ),
+                TyperAnimatedText(
                   "DEVOPS",
                   textStyle: TextStyle(
                     fontSize: 24.0,
