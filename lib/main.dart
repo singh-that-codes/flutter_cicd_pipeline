@@ -98,6 +98,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.black38,
                   ),
                 ),
+                TyperAnimatedText(
+                  "COLLABORATION",
+                  textStyle: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black38,
+                  ),
+                ),
               ],
             ),
           ],
